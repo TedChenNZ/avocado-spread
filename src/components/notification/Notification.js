@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styles from './styles.css';
 import Time from './Time.js';
+import { IconButton } from 'react-toolbox/lib/button';
 
 const getClassForPriority = notification => {
   switch (notification.severity) {
@@ -16,7 +17,9 @@ const getClassForPriority = notification => {
 }
 
 class Notification extends Component {
+  handleLocationClick() {
 
+  }
   render() {
     if (!this.props.notification) {
       return null;
@@ -34,15 +37,29 @@ class Notification extends Component {
               <Time notification={notification}/>
             </div>
             <div className={styles.contentSection}>  
-            <div className={styles.textContent}>
-                {notification.subtitle && (
-                  <span className={styles.subtitle}>
-                    {notification.subtitle}
-                  </span>
-                )}
+              <div className={styles.textContent}>
+                  {notification.subtitle && (
+                    <span className={styles.subtitle}>
+                      {notification.subtitle}
+                    </span>
+                  )}
                   {notification.content}
                 </div>
+                <div className={styles.actions}>
+                  {
+                    <IconButton
+                      icon={'location_on'}
+                      onClick={this.handleLocationClick}
+                    />
+                  }
+
+                  <IconButton
+                    icon={'forward'}
+                    onClick={this.handleLocationClick}
+                  />
+                </div>
             </div>
+
           </div>
         
       </div>

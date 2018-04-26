@@ -20,7 +20,7 @@ const mockNotifications = [
     "id": 1,
     "title": "Geofence entry",
     "subtitle": "Jane Doe",
-    "content": "Jane is going through a geofence! yes jane woohoo lets go lots of text",
+    "content": "Jane is going through a geofence! yes jane woohoo lets go lots of text lets go lots of text lets go lots of text lets go",
     "type": "GEOFENCE",
     "timestamp": "2018-04-26T03:43:21+00:00",
     "severity": 1,

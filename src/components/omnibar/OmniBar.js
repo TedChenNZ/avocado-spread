@@ -37,7 +37,7 @@ class OmniBar extends Component {
             />
           </div>
           <Button onClick={this.handleClearAll}>
-            Clear All
+            {(!this.props.store.displayNotifications || !this.props.store.notifications.length) ? 'Notifications' : 'Clear All'}
           </Button>
         </div>
         <div className={styles.right}>

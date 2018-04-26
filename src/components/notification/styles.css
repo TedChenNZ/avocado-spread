@@ -44,6 +44,7 @@
   font-size: 12px;	
   line-height: 16px;
   width: 100%;
+  height: 100%;
 }
 
 .cardContent {
@@ -53,19 +54,20 @@
   position: relative;
   overflow: hidden;
   width: 100%;
+  align-items: center;
 }
 
 .contentSection {
   display: flex;
   flex-grow: 1;
-  overflow: hidden;
   width: 100%;
   justify-content: space-between;
+  position: relative;
 }
 
 .severity {
   height: inherit;	
-  width: 32px;	
+  width: 32px;
   opacity: 0.9;
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
@@ -82,4 +84,20 @@
 
 .highSeverity {
   background-color: #E60000;
+}
+
+.actions {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+
+.actions button {
+  overflow: visible;
+  color: grey !important;
+}
+
+.actions button span {
+  font-size: 24px !important;
 }

@@ -98,8 +98,8 @@
 }
 
 .notificationLogo {
-  height: 24px;
-  width: 24px;
   height:100%;
-  padding-top:50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

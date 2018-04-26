@@ -12,6 +12,11 @@
   flex-direction: row;
 }
 
+.card:hover {
+  background-color: rgba(255,255,255);	
+  box-shadow: 0 3px 3px 0 #CCCCCC;
+}
+
 .notificationTitle {
   font-size: 14px;
   color: #2E2E2E;
@@ -60,6 +65,7 @@
 .contentSection {
   display: flex;
   flex-grow: 1;
+  overflow: hidden;
   width: 100%;
   justify-content: space-between;
   position: relative;
@@ -72,6 +78,11 @@
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
   flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  /* flex-direction: column; */
+  align-content: center;
+  vertical-align: middle;
 }
 
 .lowSeverity {
@@ -86,18 +97,9 @@
   background-color: #E60000;
 }
 
-.actions {
-  display: flex;
-  flex-direction: row;
-  position: relative;
-}
-
-
-.actions button {
-  overflow: visible;
-  color: grey !important;
-}
-
-.actions button span {
-  font-size: 24px !important;
+.notificationLogo {
+  height: 24px;
+  width: 24px;
+  height:100%;
+  padding-top:50%;
 }

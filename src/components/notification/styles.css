@@ -12,6 +12,11 @@
   flex-direction: row;
 }
 
+.card:hover {
+  background-color: rgba(255,255,255);	
+  box-shadow: 0 3px 3px 0 #CCCCCC;
+}
+
 .notificationTitle {
   font-size: 14px;
   color: #2E2E2E;
@@ -39,7 +44,7 @@
 
 .textContent {
   overflow: wrap;
-  color: #9B9B9B;	
+  color: #898989;	
   font-family: Roboto;	
   font-size: 12px;	
   line-height: 16px;
@@ -70,6 +75,11 @@
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
   flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  /* flex-direction: column; */
+  align-content: center;
+  vertical-align: middle;
 }
 
 .lowSeverity {
@@ -82,4 +92,11 @@
 
 .highSeverity {
   background-color: #E60000;
+}
+
+.notificationLogo {
+  height: 24px;
+  width: 24px;
+  height:100%;
+  padding-top:50%;
 }

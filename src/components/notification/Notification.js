@@ -17,7 +17,8 @@ const getClassForPriority = notification => {
 }
 
 class Notification extends Component {
-  handleLocationClick() {
+  handleLocationClick = () => {
+    this.props.handleNotificationClick(this.props.notification);
 
   }
   render() {
@@ -25,6 +26,7 @@ class Notification extends Component {
       return null;
     }
     const notification = this.props.notification;
+    console.log(notification);
     return (
       <div className={styles.card}>
         <div className={`${styles.severity} ${getClassForPriority(notification)}`}>
@@ -47,16 +49,21 @@ class Notification extends Component {
                 </div>
                 <div className={styles.actions}>
                   {
+                    notification.properties && notification.properties.lat &&
                     <IconButton
                       icon={'location_on'}
                       onClick={this.handleLocationClick}
                     />
                   }
 
-                  <IconButton
-                    icon={'forward'}
-                    onClick={this.handleLocationClick}
-                  />
+                  {
+                    notification.properties && notification.properties.url && 
+                    <IconButton
+                      icon={'forward'}
+                      onClick={this.handleLocationClick}
+                    />
+                  }
+
                 </div>
             </div>
 

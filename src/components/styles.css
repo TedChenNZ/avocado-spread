@@ -4,7 +4,6 @@
 
 .notificationWrapper {
   margin-top: 0;
-  height: 100vh;
   position: relative;
   overflow: hidden;
   transition: margin-top 0.3s;

@@ -1,5 +1,8 @@
 @import '../common.css';
 
+.title {
+  color: #1869B7 !important;
+}
 .omnibar  {
   margin-top: var(--top);  
   height: 40px;

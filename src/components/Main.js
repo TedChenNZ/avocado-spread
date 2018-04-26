@@ -10,6 +10,11 @@ import styles from './styles.css';
 @inject('store')
 @observer
 class Main extends Component {
+  handleNotificationClick = (notification) => {
+    const props = notification.properties;
+    this.props.store.map.panTo([props.lat, props.long]);
+  }
+  
   render() {
     let notifications = [];
     if (this.props.store && this.props.store.notifications) {
@@ -25,7 +30,7 @@ class Main extends Component {
                     <div className={`${styles.notificationWrapper} ${!store.displayNotifications ? styles.hideNotifications : ''}`}>
                         {
                             notifications.map((notification =>
-                                    <Notification notification={notification} key={notification.id} />
+                  <Notification notification={notification} key={notification.id} handleNotificationClick={this.handleNotificationClick}/>
                             ))
                         }
                     </div>

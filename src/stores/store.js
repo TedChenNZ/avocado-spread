@@ -15,6 +15,8 @@ class Store {
   @observable notifications = [];
   @observable displayNotifications = true;
   @observable sortBy = SORT_BY.TIME;
+  @observable map;
+  @observable tileLayer;
   notificationSocket = null;
 
   constructor(rootStore) {

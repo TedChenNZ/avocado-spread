@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import styles from './styles.css';
 import L from 'leaflet';
+import { inject, observer } from 'mobx-react';
 
 let config = {};
 config.params = {
-    center: [40.655769,-73.938503],
+    center: [-36.7236902, 174.7054304],
     zoomControl: false,
-    zoom: 13,
-    maxZoom: 19,
+    zoom: 15,
+    maxZoom: 25,
     minZoom: 11,
     scrollwheel: false,
     legends: true,
@@ -15,7 +16,7 @@ config.params = {
     attributionControl: true
 };
 config.tileLayer = {
-    uri: 'http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png',
+    uri: 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
     params: {
         minZoom: 11,
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
@@ -24,7 +25,8 @@ config.tileLayer = {
     }
 };
 
-
+@inject('store')
+@observer
 class MapPanel extends Component {
 
     constructor(props) {
@@ -50,7 +52,9 @@ class MapPanel extends Component {
     // we could make an AJAX request for the GeoJSON data here if it wasn't stored locally
     //this.getData();
     // create the Leaflet map object
-    if (!this.state.map) this.init(this._mapNode);
+    if (!this.state.map) {
+        this.init(this._mapNode);
+    }
   }
 
     init(id) {
@@ -65,6 +69,9 @@ class MapPanel extends Component {
 
         // set our state to include the tile layer
         this.setState({ map, tileLayer });
+
+        this.props.store.map = map;
+        this.props.store.tileLayer = tileLayer;
     }
 
 

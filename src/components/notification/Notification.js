@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
 import styles from './styles.css';
 import Time from './Time.js';
-import { IconButton } from 'react-toolbox/lib/button';
+import twitterIcon from './icons/ic-twitter-hk.png';
+import documentIcon from './icons/ic-document-hk.png';
+import maintenanceIcon from './icons/ic-dvir-hk.png';
+import geofenceIcon from './icons/ic-geofence-hk.png';
+import roadsideIcon from './icons/ic-roadside-hk.png';
+import deleteIcon from './icons/ic-delete-hk.png';
+import violationIcon from './icons/ic-violation-hk.png';
 
 const getClassForPriority = notification => {
   switch (notification.severity) {
@@ -16,6 +22,23 @@ const getClassForPriority = notification => {
   }
 }
 
+const getLogoForType = notification => {
+  switch (notification.type) {
+    case "TWITTER":
+      return twitterIcon;
+    case "ENFORCEMENT":
+      return roadsideIcon;
+    case "GEOFENCE":
+      return geofenceIcon;
+    case "TRAFFIC":
+      return violationIcon;
+    case "OVERSPEED":
+      return violationIcon;
+    default:
+      return documentIcon;
+  }
+}
+
 class Notification extends Component {
 
   render() {
@@ -26,6 +49,10 @@ class Notification extends Component {
     return (
       <div className={styles.card}>
         <div className={`${styles.severity} ${getClassForPriority(notification)}`}>
+           <div className={styles.notificationLogo}>
+             <img  src={(getLogoForType(notification))}
+              alt="icon"/>
+          </div>
         </div>
           <div className={styles.cardContent}>      
             <div className={styles.contentSection}>
@@ -45,7 +72,6 @@ class Notification extends Component {
                 </div>
             </div>
           </div>
-        
       </div>
 
     );

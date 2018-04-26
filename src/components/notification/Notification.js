@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styles from './styles.css';
 import Time from './Time.js';
+import { IconButton } from 'react-toolbox/lib/button';
 
 const getClassForPriority = notification => {
   switch (notification.severity) {

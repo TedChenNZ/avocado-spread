@@ -30,15 +30,23 @@ class OmniBar extends Component {
     return (
       <div className={styles.omnibar}>
         <div className={styles.left}>
-          <div className={`${styles.item} ${this.props.store.sortBy === SORT_BY.SEVERITY && styles.upsideDown}`}>
+          <div className={`${styles.item} ${this.props.store.sortBy === SORT_BY.SEVERITY && styles.sideways}`}>
             <IconButton
               icon={'sort'}
               onClick={this.handleSort}
             />
           </div>
-          <Button onClick={this.handleClearAll} className={styles.title}>
-            {(!this.props.store.displayNotifications || !this.props.store.notifications.length) ? 'Notifications' : 'Clear All'}
-          </Button>
+          {
+            (!this.props.store.displayNotifications || !this.props.store.notifications.length) ?
+              <Button  className={styles.title} disabled>
+                notifications
+              </Button>
+            :
+              <Button onClick={this.handleClearAll} className={styles.title}>
+                Clear All
+              </Button>
+            
+          }
         </div>
         <div className={styles.right}>
           <div className={`${styles.item} ${displayNotifications && styles.upsideDown}`}>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Panel from './panel/Panel';
 import MapPanel from './map/MapPanel';
+import Banner from './banner/Banner';
 import Notification from './notification/Notification';
 import OmniBar from './omnibar/OmniBar';
 import { toJS } from 'mobx';
@@ -27,6 +28,7 @@ class Main extends Component {
     return (
         <div className={styles.main}>
             <MapPanel />
+            <Banner />
             <Panel>
                 <OmniBar />
                 <div className={styles.notificationContainer}>

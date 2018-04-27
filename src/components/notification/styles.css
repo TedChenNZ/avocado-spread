@@ -103,3 +103,26 @@
   justify-content: center;
   align-items: center;
 }
+
+.card:hover .read {
+  left: 0px;
+  transition: left 0.3s;
+}
+
+.read {
+  position: absolute;
+  left: -40px;
+  background: #1869b7;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  overflow: hidden;
+  transition: left 0.3s;
+  cursor: pointer;
+}
+
+.read span {
+  color: white !important;
+}

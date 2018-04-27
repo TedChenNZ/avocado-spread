@@ -43,8 +43,12 @@ const getLogoForType = notification => {
 class Notification extends Component {
   handleLocationClick = () => {
     this.props.handleNotificationClick(this.props.notification);
-
   }
+
+  handleMarkAsRead = () => {
+    this.props.handleMarkAsRead(this.props.notification);
+  }
+
   render() {
     if (!this.props.notification) {
       return null;
@@ -94,6 +98,12 @@ class Notification extends Component {
                 </div>
             </div>
           </div>
+
+        <div className={styles.read} onClick={this.handleMarkAsRead}>
+          <IconButton
+            icon={'delete'}
+          />
+        </div>
       </div>
 
     );

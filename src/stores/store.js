@@ -39,7 +39,7 @@ class Store {
   }
   @action
   markAsRead(notification) {
-    sendMarkAsRead(notification);
+    this.sendMarkAsRead(notification);
     this.notifications = this.notifications.filter(i =>  i.id !== notification.id);
   }
 

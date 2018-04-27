@@ -74,12 +74,12 @@ class Store {
   @action
   sort() {
     const getSeverity = (notification) => {
-      return notification.severity || 1;
+      return parseInt(notification.severity) || 1;
     }
     const sortFunc = (a, b) => {
       switch(this.sortBy) {
         case SORT_BY.SEVERITY:
-          let diff = getSeverity(a) - getSeverity(b);
+          let diff = getSeverity(b) - getSeverity(a);
           if (diff === 0) {
             diff = compareTime(a, b);
           }

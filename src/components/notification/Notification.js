@@ -12,11 +12,11 @@ import violationIcon from './icons/ic-violation-hk.png';
 
 const getClassForPriority = notification => {
   switch (notification.severity) {
-    case 1:
+    case '1':
       return styles.lowSeverity;
-    case 2:
+    case '2':
       return styles.mediumSeverity;
-    case 3: 
+    case '3': 
       return styles.highSeverity;
     default:
       return styles.lowSeverity;
@@ -49,11 +49,13 @@ class Notification extends Component {
     this.props.handleMarkAsRead(this.props.notification);
   }
 
+
   render() {
     if (!this.props.notification) {
       return null;
     }
     const notification = this.props.notification;
+    console.log(notification);
     return (
       <div className={styles.card}>
         <div className={`${styles.severity} ${getClassForPriority(notification)}`}>
@@ -82,17 +84,20 @@ class Notification extends Component {
                   {
                     notification.properties && notification.properties.lat &&
                     <IconButton
+                      className={styles.icon}
                       icon={'location_on'}
                       onClick={this.handleLocationClick}
                     />
                   }
 
                   {
-                    notification.properties && notification.properties.url && 
-                    <IconButton
+                    notification.url &&
+                    <a href = {notification.url}>
+                  <IconButton
+                    className={styles.icon}
                       icon={'forward'}
-                      onClick={this.handleLocationClick}
                     />
+                    </a>
                   }
 
                 </div>

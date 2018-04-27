@@ -82,7 +82,7 @@ class Notification extends Component {
                 </div>
                 <div className={styles.actions}>
                   {
-                    notification.properties && notification.properties.lat &&
+                    notification.lat &&
                     <IconButton
                       className={styles.icon}
                       icon={'location_on'}

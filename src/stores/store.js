@@ -10,7 +10,6 @@ export const SORT_BY = {
 const compareTime = (a, b) => {
   return compareDesc(parse(a.timestamp), parse(b.timestamp));
 }
-
 class Store {
   @observable notifications = [];
   @observable displayNotifications = true;
@@ -74,7 +73,7 @@ class Store {
   @action
   sort() {
     const getSeverity = (notification) => {
-      return parseInt(notification.severity) || 1;
+      return parseInt(notification.severity, 10) || 1;
     }
     const sortFunc = (a, b) => {
       switch(this.sortBy) {

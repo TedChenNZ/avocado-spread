@@ -11,7 +11,7 @@ import styles from './styles.css';
 @observer
 class Main extends Component {
   handleNotificationClick = (notification) => {
-    const props = notification.properties;
+    const props = notification;
     this.props.store.map.panTo([props.lat, props.long]);
   }
   handleMarkAsRead = (notification) => {

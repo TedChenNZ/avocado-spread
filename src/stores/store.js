@@ -36,6 +36,7 @@ class Store {
       id: notification.id,
     }
     this.notificationSocket.send(JSON.stringify(msg));
+    this.notifications = this.notifications.filter(i =>  i.id !== notification.id);
   }
 
   @action

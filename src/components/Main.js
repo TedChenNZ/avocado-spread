@@ -14,7 +14,10 @@ class Main extends Component {
     const props = notification.properties;
     this.props.store.map.panTo([props.lat, props.long]);
   }
-  
+  handleMarkAsRead = (notification) => {
+      this.props.store.markAsRead(notification);
+  }
+
   render() {
     let notifications = [];
     if (this.props.store && this.props.store.notifications) {
@@ -30,7 +33,7 @@ class Main extends Component {
                     <div className={`${styles.notificationWrapper} ${!store.displayNotifications ? styles.hideNotifications : ''}`}>
                         {
                             notifications.map((notification =>
-                  <Notification notification={notification} key={notification.id} handleNotificationClick={this.handleNotificationClick}/>
+                  <Notification notification={notification} key={notification.id} handleNotificationClick={this.handleNotificationClick} handleMarkAsRead={this.handleMarkAsRead}/>
                             ))
                         }
                     </div>

@@ -55,7 +55,7 @@
 .cardContent {
   display: flex;
   flex-direction: column;
-  padding: 10px 10px 10px 10px;
+  padding: 10px 10px 10px 16px;
   position: relative;
   overflow: hidden;
   width: 100%;
@@ -73,7 +73,7 @@
 
 .severity {
   height: inherit;	
-  width: 32px;
+  width: 40px;
   opacity: 0.9;
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;

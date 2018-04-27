@@ -13,7 +13,7 @@ import styles from './styles.css';
 class Main extends Component {
   handleNotificationClick = (notification) => {
     const props = notification;
-    this.props.store.map.panTo([props.lat, props.long]);
+    this.props.store.map.panTo([props.lat, props.lng]);
   }
   handleMarkAsRead = (notification) => {
       this.props.store.markAsRead(notification);

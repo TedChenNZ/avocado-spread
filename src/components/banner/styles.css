@@ -1,0 +1,20 @@
+.banner {
+    height: 70px;
+    width: 100%;
+    background-color: #ee3124;
+    display: flex;
+    vertical-align: middle;
+    padding-left: 20px;
+}
+
+.logo {
+    height:70px;
+    padding-top:12px;
+    display: flex;
+}
+
+.logoImage {
+    height: 42px;
+    width: 50px;
+}
+

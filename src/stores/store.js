@@ -30,12 +30,16 @@ class Store {
   }
 
   @action
-  markAsRead(notification) {
+  sendMarkAsRead(notification) {
     const msg = {
       type: "markAsRead",
       id: notification.id,
     }
     this.notificationSocket.send(JSON.stringify(msg));
+  }
+  @action
+  markAsRead(notification) {
+    sendMarkAsRead(notification);
     this.notifications = this.notifications.filter(i =>  i.id !== notification.id);
   }
 
@@ -50,6 +54,9 @@ class Store {
   
   @action
   clearAll() {
+    this.notifications.forEach(n => {
+      this.markAsRead(n);
+    })
     this.notifications = [];
   }
 

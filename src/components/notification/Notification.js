@@ -9,6 +9,8 @@ import geofenceIcon from './icons/ic-geofence-hk.png';
 import roadsideIcon from './icons/ic-roadside-hk.png';
 import deleteIcon from './icons/ic-delete-hk.png';
 import violationIcon from './icons/ic-violation-hk.png';
+import overspeedIcon from './icons/ic-overspeed-hk.png';
+import trafficIcon from './icons/ic-road-hk.png';
 
 const getClassForPriority = notification => {
   switch (notification.severity) {
@@ -32,8 +34,10 @@ const getLogoForType = notification => {
     case "GEOFENCE":
       return geofenceIcon;
     case "TRAFFIC":
-      return violationIcon;
+      return trafficIcon;
     case "OVERSPEED":
+      return overspeedIcon;
+    case "VIOLATION":
       return violationIcon;
     default:
       return documentIcon;

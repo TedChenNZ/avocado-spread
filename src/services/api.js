@@ -27,6 +27,78 @@ const mockNotifications = [
     "properties": {
       "driverGid": "3fac4c38-367d-484b-9cdc-6496a2bc0742"
     }
+  },
+  {
+    "id": 3,
+    "title": "Geofence entry",
+    "subtitle": "Jane Doe",
+    "content": "Jane is going through a geofence! yes jane woohoo lets go lots of text lets go lots of text lets go lots of text lets go",
+    "type": "GEOFENCE",
+    "timestamp": "2018-04-26T03:43:21+00:00",
+    "severity": 1,
+    "properties": {
+      "driverGid": "3fac4c38-367d-484b-9cdc-6496a2bc0742"
+    }
+  },
+  {
+    "id": 4,
+    "title": "Geofence entry",
+    "subtitle": "Jane Doe",
+    "content": "Jane is going through a geofence! yes jane woohoo lets go lots of text lets go lots of text lets go lots of text lets go",
+    "type": "GEOFENCE",
+    "timestamp": "2018-04-26T03:43:21+00:00",
+    "severity": 3,
+    "properties": {
+      "driverGid": "3fac4c38-367d-484b-9cdc-6496a2bc0742"
+    }
+  },
+  {
+    "id": 5,
+    "title": "Geofence entry",
+    "subtitle": "Jane Doe",
+    "content": "Jane is going through a geofence! yes jane woohoo lets go lots of text lets go lots of text lets go lots of text lets go",
+    "type": "GEOFENCE",
+    "timestamp": "2018-04-26T03:43:21+00:00",
+    "severity": 1,
+    "properties": {
+      "driverGid": "3fac4c38-367d-484b-9cdc-6496a2bc0742"
+    }
+  },
+  {
+    "id": 5,
+    "title": "Geofence entry",
+    "subtitle": "Jane Doe",
+    "content": "Jane is going through a geofence! yes jane woohoo lets go lots of text lets go lots of text lets go lots of text lets go",
+    "type": "GEOFENCE",
+    "timestamp": "2018-04-26T03:43:21+00:00",
+    "severity": 2,
+    "properties": {
+      "driverGid": "3fac4c38-367d-484b-9cdc-6496a2bc0742"
+    }
+  },
+  {
+    "id": 6,
+    "title": "Geofence entry",
+    "subtitle": "Jane Doe",
+    "content": "Jane is going through a geofence! yes jane woohoo lets go lots of text lets go lots of text lets go lots of text lets go",
+    "type": "GEOFENCE",
+    "timestamp": "2018-04-26T03:43:21+00:00",
+    "severity": 1,
+    "properties": {
+      "driverGid": "3fac4c38-367d-484b-9cdc-6496a2bc0742"
+    }
+  },
+  {
+    "id": 7,
+    "title": "Geofence entry",
+    "subtitle": "Jane Doe",
+    "content": "Jane is going through a geofence! yes jane woohoo lets go lots of text lets go lots of text lets go lots of text lets go",
+    "type": "GEOFENCE",
+    "timestamp": "2018-04-26T03:43:21+00:00",
+    "severity": 2,
+    "properties": {
+      "driverGid": "3fac4c38-367d-484b-9cdc-6496a2bc0742"
+    }
   }
 ];
 export function getNotifications() {

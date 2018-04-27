@@ -2,7 +2,10 @@
 
 .title {
   color: #1869B7 !important;
+  text-transform: uppercase;
+  font-weight: 500;
 }
+
 .omnibar  {
   margin-top: var(--top);  
   height: 40px;
@@ -38,4 +41,8 @@
 
 .upsideDown {
   transform: scaleY(-1);
+}
+
+.sideways {
+  transform: scaleX(-1);
 }
